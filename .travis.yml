@@ -1,15 +1,27 @@
+# Required to run your project under the correct environment.
 language: php
-sudo: false
 
+# Versions of PHP you want your project run with.
 php:
-    - "7.0"
+  - 7.0
+  - 7.1
+  - 7.2
 
-matrix:
-    fast_finish: true
+addons:
+  code_climate:
+    repo_token: 894db52d19b72ddf0e0d46415d2725cf5b03f17b1a44c874e000b36a9c92b59d
 
-install:
-    - composer self-update
-    - composer update
+notifications:
+  email: false
 
-script:
-    - vendor/bin/phpunit
+# Commands to be run before your environment runs.
+before_script:
+  - composer self-update
+  - composer install --no-interaction
+
+# Commands to be run after your environment runs.
+after_script:
+  - vendor/bin/test-reporter
+
+# Commands you want to run that will verify your build.
+script: vendor/bin/phpunit

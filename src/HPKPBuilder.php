@@ -25,7 +25,7 @@ class HPKPBuilder
     protected $reportOnly = false;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param array $preloaded
      */

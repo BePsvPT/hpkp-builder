@@ -9,7 +9,7 @@ php:
 
 addons:
   code_climate:
-    repo_token: 894db52d19b72ddf0e0d46415d2725cf5b03f17b1a44c874e000b36a9c92b59d
+    repo_token: b540c1e868741679fb0ff9b031f380f9c0af2ec5a65b912a9d3591a6583ecf5f
 
 notifications:
   email: false

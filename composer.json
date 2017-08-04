@@ -1,5 +1,5 @@
 {
-  "name": "bespvpt/hpkp-builder",
+  "name": "bepsvpt/hpkp-builder",
   "description": "Easily integrate HTTP Public-Key-Pinning headers into your application.",
   "keywords": ["Security", "HPKP", "security headers", "headers", "Hypertext", "public key pinning", "public key"],
   "homepage": "https://github.com/BePsvPT/hpkp-builder",

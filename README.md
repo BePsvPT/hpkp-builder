@@ -1,63 +1,19 @@
 # HTTP Public-Key-Pinning Builder
 
-[![Build Status](https://travis-ci.org/paragonie/hpkp-builder.svg?branch=master)](https://travis-ci.org/paragonie/hpkp-builder)
+Integrate for [secure-headers](https://github.com/BePsvPT/secure-headers) package.
 
-This library aims to make it easy to build HTTP Public-Key-Pinning headers
-in your PHP projects. HPKP Builder was  was created by
-[Paragon Initiative Enterprises](https://paragonie.com) as part of our effort
-to encourage better [application security](https://paragonie.com/service/appsec)
-practices.
+[![Build Status](https://travis-ci.org/BePsvPT/hpkp-builder.svg?branch=master)](https://travis-ci.org/BePsvPT/hpkp-builder)
+[![Test Coverage](https://codeclimate.com/github/BePsvPT/hpkp-builder/badges/coverage.svg)](https://codeclimate.com/github/BePsvPT/hpkp-builder/coverage)
+[![Code Climate](https://codeclimate.com/github/BePsvPT/hpkp-builder/badges/gpa.svg)](https://codeclimate.com/github/BePsvPT/hpkp-builder)
+[![StyleCI](https://styleci.io/repos/97476326/shield)](https://styleci.io/repos/97476326)
+[![Latest Stable Version](https://poser.pugx.org/bepsvpt/hpkp-builder/v/stable?format=flat-square)](https://packagist.org/packages/bepsvpt/hpkp-builder)
+[![Total Downloads](https://poser.pugx.org/bepsvpt/hpkp-builder/downloads?format=flat-square)](https://packagist.org/packages/bepsvpt/hpkp-builder)
+[![License](https://poser.pugx.org/bepsvpt/hpkp-builder/license?format=flat-square)](https://packagist.org/packages/bepsvpt/hpkp-builder)
 
-Check out our other [open source projects](https://paragonie.com/projects) too.
+## Version
 
-## PHP Version requirements
+1.0.0
 
-* PHP 7.0 or newer
+## Acknowledge
 
-## Build a Public-Key-Pinning header from a JSON configuration file
-
-```php
-<?php
-
-use \ParagonIE\HPKPBuilder\HPKPBuilder;
-
-$hpkp = HPKPBuilder::fromFile('/path/to/source.json');
-$hpkp->sendHPKPHeader();
-```
-### Example JSON configuration
-
-```json
-{
-    "hashes": [
-        {
-            "algo": "sha256",
-            "hash": "hwGEkxDWJ2oHtKv6lsvylKvhotXAAZQR1e0nq0eb2Vw="
-        },
-        {
-            "algo": "sha256",
-            "hash": "0jum0Eiu4Eg6vjn3zTmyd/RobfN6e4EagFQcz6E5ZKI="
-        }
-    ],
-    "include-subdomains": false,
-    "max-age": 5184000,
-    "report-only": false,
-    "report-uri": null
-}
-```
-
-## Build a Public-Key-Pinning Header
-
-```php
-<?php
-
-use \ParagonIE\HPKPBuilder\HPKPBuilder;
-
-$hpkp = (new HPKPBuilder)
-    ->addHash('hwGEkxDWJ2oHtKv6lsvylKvhotXAAZQR1e0nq0eb2Vw=')
-    ->addHash('0jum0Eiu4Eg6vjn3zTmyd/RobfN6e4EagFQcz6E5ZKI=')
-    ->addHash('JDR7yv7lvdKaM26fnKriSPiyryeYw9qi5sO8Ot7SNUQ=')
-    ->includeSubdomains(true)
-    ->reportOnly(true)
-    ->reportUri('https://report-uri.io')
-    ->sendHPKPHeader();
-```
+This package is fork from [paragonie/hpkp-builder](https://github.com/paragonie/hpkp-builder), thanks Paragon Initiative Enterprises building this package.
